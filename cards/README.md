@@ -27,3 +27,6 @@ Testing
 - tests functions are started with uppercase letters
     - ex: TestNewDeck(t *testing.T)
         - t is the test handler
+- must run go mod init <project-directory-name-here>  within project directory for go test to work 
+    - need to provide a module path for test to run 
+    - ex go mod init cards
