@@ -23,3 +23,7 @@ Functions/Return Types
 - must define an arguments type of data if not defined previously
     - ex: func(d, deck, handSize int) 
 
+Testing
+- tests functions are started with uppercase letters
+    - ex: TestNewDeck(t *testing.T)
+        - t is the test handler

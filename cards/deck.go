@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // Create a new type of deck
@@ -14,7 +16,10 @@ func newDeck() deck {
 	cards := deck{}
 
 	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
-	cardValues := []string{"Ace", "One", "Two", "Three", "Four", "Five", "Six"}
+	cardValues := []string{
+		"Ace", "Two", "Three", "Four",
+		"Five", "Six", "Seven", "Eight",
+		"Nine", "Ten", "Jack", "Queen", "King"}
 
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
@@ -54,4 +59,14 @@ func newDeckFromFile(filename string) deck {
 	s := strings.Split(string(bs), ",")
 	return deck(s)
 
+}
+
+func (d deck) shuffle() { // this is a simple random number generation in GO
+	source := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(source)
+
+	for i := range d {
+		newPositon := r.Intn(len(d) - 1)
+		d[i], d[newPositon] = d[newPositon], d[i]
+	}
 }
