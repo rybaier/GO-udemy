@@ -89,3 +89,16 @@ Reference types - don't worry about pointers with these
 - you need to know all the different fields at compile time 
 - Use to represent a "thing" with a lot of different properties
 - Value type 
+
+### Interfaces
+Interfaces are for guiding you down the correct path they don't necessarily help you write correct code
+-  interfaces are NOT generic types
+- interfaces are 'implicit'
+- they are a contract to help us manage types
+    - garbage in => garbage out
+    - if custom type implementation of a function is broken the interfaced wont help
+- interfaces are tough 
+    - learn and understand how to read them 
+        - use standard library for practice on reading interfaces
+- interfaces could be seen as a multiple function holder
+
