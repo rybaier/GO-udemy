@@ -1,6 +1,6 @@
 # My source Code for Stephen Grider GO udemy course
 
-Source Code for GO course 
+My Source Code for GO course 
 
 ## Notes from course
 ### Cards project section
@@ -102,3 +102,39 @@ Interfaces are for guiding you down the correct path they don't necessarily help
         - use standard library for practice on reading interfaces
 - interfaces could be seen as a multiple function holder
 
+### Channels and Routines
+###### Routines 
+- a GO routine is a process of a running program
+    - it is the engine that executes the code 
+    - by creating multiple routines we can speed up the process decreasing run time
+    - 
+- use go keyword in front of a function to start a new routine
+    - ex: go checkLink(link)
+- By default Go attempts to use only one CPU core with the Go scheduler
+    - Go Scheduler handles the execution of Go routines
+- CONCURRENCY IS NOT PARELLELISM!!!
+     - Concurrency 
+        - we can have multiple threads executing code. 
+        - If one thread blocks another one is picked up and worked on 
+    - Parallelism
+        - Multiple threads execited at the exact same time. 
+        - Requires multiple CPU's
+- Main Routine is prioritzed over child go routines
+    - controls when the program exits
+    - doesn't matter if other routines are still running when main routine exits 
+###### Channels
+- a channel controls communication for routines
+- all routines must be of same type as channel
+- a channel communicates to main routine when it is ok to exit
+- syntax ex.
+    - c := make(chan string)
+        - sending to channel
+            - c <- "sending to channel"
+        - receiving from channel
+            - "receiving from channel" <- c
+- use blocking calls to prevent main from exiting early
+- Alternative loop syntax for channel
+    - ex 
+        - for l := range c {
+            go checkLink(l,c)
+        }
