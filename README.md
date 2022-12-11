@@ -138,3 +138,16 @@ Interfaces are for guiding you down the correct path they don't necessarily help
         - for l := range c {
             go checkLink(l,c)
         }
+
+###### Function Literal with channel
+- A Function literal in GO acts like 
+    - Javascript Anonymous Function
+    - Ruby Lambda
+    - Python Lambda
+    - C# Lambda
+    - PHP Anonymous Function
+- ex 
+    - go func () {
+			time.Sleep(2 * time.Second)
+			checkLink(l, c)
+	    }() // second set of () invokes the function
