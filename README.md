@@ -3,6 +3,15 @@
 My Source Code for GO course 
 
 ## Notes from course
+### Go CLI
+Primary CLI commands
+- go build - compiles go source code files
+- go run - compiles and executes 1 or 2 files
+- go fmt - Formats all the code in each file in the current directory
+- go install - compiles and "installs" a package
+- go get - downloads the raw source code of someone else;s pacjage 
+- go test - runs any tests associated with the current project
+
 ### Cards project section
 #### Variables
 - define variable in multiple ways with identifying type or using :=
